@@ -16,7 +16,7 @@ jobs:
           run: cowsay -f dragon "Hello Prateek" >> dragon.txt
 
         - name: Text file exists
-          run: gerp -i "dragon" dragon.txt
+          run: grep -i "dragon" dragon.txt
 
         - name: Read File
           run: cat dragon.txt
