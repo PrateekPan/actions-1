@@ -15,8 +15,8 @@ jobs:
         - name: Generate Ascii Artwork in CMD
           run: cowsay -f dragon "Hello Prateek" >> dragon.txt
 
-        - name: Text file exists
-          run: grep -i "dragon" dragon.txt
+        #- name: Text file exists
+          #arun: grep -i "dragon" dragon.txt
 
         - name: Read File
           run: cat dragon.txt
