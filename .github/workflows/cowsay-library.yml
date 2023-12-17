@@ -1,0 +1,25 @@
+name: Installing Cowsay Library
+
+on: push
+
+jobs:
+    ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+
+        - name: Install Cowsay Library
+          run: sudo apt-get install cowsay -y
+
+        - name: Generate Ascii Artwork in CMD
+          run: cowsay -f dragon "Hello Prateek" >> dragon.txt
+
+        - name: Text file exists
+          run: gerp -i "dragon" dragon.txt
+
+        - name: Read File
+          run: cat dragon.txt
+
+        - name: checkout re[po files
+          run: ls
