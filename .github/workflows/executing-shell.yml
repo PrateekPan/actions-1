@@ -3,9 +3,9 @@ name: Executing shell scripts
 on: push
 
 jobs: 
-    shell-jobs:
-        run on: ubuntu-latest
-        steps:
+  shell-jobs:
+      runs-on: ubuntu-latest
+      steps:
         - name: checkout repo
           uses: actions/checkout@v4
 
