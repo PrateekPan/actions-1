@@ -9,10 +9,10 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
 
-        -name: List Repo FIles
-         run: ls -ltra
+        - name: List Repo FIles
+          run: ls -ltra
 
-        -name: Executing shell commands
-         run: |
+        - name: Executing shell commands
+          run: |
            chomd +x ascii-script.sh
            ./ascii-script.sh
