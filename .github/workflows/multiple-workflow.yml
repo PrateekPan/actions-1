@@ -1,4 +1,4 @@
-name: Using Multiple Workflow
+name: Using Multiple Workflow with artifacts
 
 on: push
 
@@ -15,8 +15,10 @@ jobs:
         - name: Generate Ascii Artwork in CMD
           run: cowsay -f dragon "Hello Prateek" >> dragon.txt
 
-        - name: Sleep for 30seconds
-          run: sleep 30
+        - uses: actions/upload-artifact@v4
+          with:
+            name: Dragon file
+            path: dragon.txt
 
     Test_job:
         needs: Build_job
