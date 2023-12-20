@@ -15,15 +15,20 @@ jobs:
         - name: Generate Ascii Artwork in CMD
           run: cowsay -f dragon "Hello Prateek" >> dragon.txt
 
-        - name: Sleep for 30seconds
-          run: sleep 30
+        - name: Uploads artifacts
+        - uses: actions/upload-artifact@v4
+          with:
+            name: Dragon artifact file
+            path: dragon.txt
 
     Test_job:
         needs: Build_job
         runs-on: ubuntu-latest
         steps:
-        - name: Sleep for 10 seconds
-          run: sleep 10
+         - name: Download artifacts
+         - uses: actions/download-artifact@v4
+           with:
+            name: Dragon artifact file
 
         - name: Test file exists
           run: grep -i "Hello" dragon.txt
@@ -32,6 +37,12 @@ jobs:
         needs: [Test_job]
         runs-on: ubuntu-latest
         steps:
+
+         - name: Download artifacts
+         - uses: actions/download-artifact@v4
+           with:
+            name: Dragon artifact file
+            
         - name: Read File
           run: cat dragon.txt
 
