@@ -1,6 +1,8 @@
 name: COncurrency and cron
 
-on: workflow_dispatch
+on:
+    push: 
+    workflow_dispatch:
  # schedule:
    # - cron: "*/1 * * * *"
     #push
