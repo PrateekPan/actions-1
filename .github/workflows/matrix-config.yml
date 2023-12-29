@@ -1,0 +1,25 @@
+name: Matrix Configuration
+
+on: 
+    push: 
+    workflow_dispatch: 
+
+#docker comes preinstalled with docker in VM
+jobs:
+    deploy_on_ubuntu:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Docker Details
+              run: docker info
+
+            - name: Run Images
+              run: docker run hellow-world
+        
+    deploy_on_windows:
+        runs-on: windows-latest
+        steps:
+            - name: Echo Docker Details
+              run: docker info
+
+            - name: Run Images
+              run: docker run hellow-world
