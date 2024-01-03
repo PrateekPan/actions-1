@@ -3,8 +3,8 @@ name: COncurrency and cron
 on:
     push: 
     workflow_dispatch:
- # schedule:
-   # - cron: "*/1 * * * *"
+    schedule:
+    - cron: "*/5 * * * *"
     #push
 
 #using variables at workflow level, we can also use then in step level and jon level, in job level it will be
