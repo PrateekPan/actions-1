@@ -1,8 +1,8 @@
 name: COncurrency and cron
 
 on:
-    push: 
-    workflow_dispatch:
+    #push: 
+    #workflow_dispatch:
     schedule:
     - cron: "*/5 * * * *"
     #push
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Docker Run
-      timeout-minutes: 1
+      #timeout-minutes: 1
       run: |
         echo docker run -d -p 8080:80 $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
         sleep 300s
